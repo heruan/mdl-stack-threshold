@@ -18,6 +18,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteParam;
 import com.vaadin.flow.router.RoutePrefix;
 import com.vaadin.flow.router.RouterLink;
+import com.vaadin.flow.theme.lumo.LumoUtility.AlignItems;
 import com.vaadin.flow.theme.lumo.LumoUtility.Display;
 import com.vaadin.flow.theme.lumo.LumoUtility.Flex;
 import com.vaadin.flow.theme.lumo.LumoUtility.FlexDirection;
@@ -42,7 +43,7 @@ public class UserList extends MasterDetailLayout implements BeforeEnterObserver 
         backButton.add(LineAwesomeIcon.ANGLE_LEFT_SOLID.create());
         addButton.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_TERTIARY_INLINE);
         addButton.setIcon(LineAwesomeIcon.PLUS_SOLID.create());
-        header.addClassNames(Padding.MEDIUM);
+        header.addClassNames(Padding.MEDIUM, AlignItems.CENTER);
         header.addToStart(backButton);
         header.addToMiddle(new H4("Users"));
         header.addToEnd(addButton);

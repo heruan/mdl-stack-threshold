@@ -5,16 +5,12 @@ import org.vaadin.lineawesome.LineAwesomeIcon;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.masterdetaillayout.MasterDetailLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.component.tabs.TabsVariant;
-import com.vaadin.flow.component.textfield.EmailField;
-import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.binder.ReadOnlyHasValue;
 import com.vaadin.flow.router.BeforeEnterEvent;
@@ -25,6 +21,7 @@ import com.vaadin.flow.router.RouteParam;
 import com.vaadin.flow.router.RouteParameters;
 import com.vaadin.flow.router.RoutePrefix;
 import com.vaadin.flow.router.RouterLink;
+import com.vaadin.flow.theme.lumo.LumoUtility.AlignItems;
 import com.vaadin.flow.theme.lumo.LumoUtility.Flex;
 import com.vaadin.flow.theme.lumo.LumoUtility.Padding;
 
@@ -62,7 +59,7 @@ public class UserDetail extends MasterDetailLayout implements BeforeEnterObserve
     UserDetail() {
         backButton.add(LineAwesomeIcon.ANGLE_LEFT_SOLID.create());
         saveButton.addThemeVariants(ButtonVariant.LUMO_TERTIARY_INLINE);
-        header.addClassNames(Padding.MEDIUM);
+        header.addClassNames(Padding.MEDIUM, AlignItems.CENTER);
         header.addToStart(backButton);
         header.addToMiddle(title);
         header.addToEnd(saveButton);
