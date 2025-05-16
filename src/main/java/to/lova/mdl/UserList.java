@@ -9,6 +9,7 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H3;
+import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.masterdetaillayout.MasterDetailLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.router.BeforeEnterEvent;
@@ -17,6 +18,7 @@ import com.vaadin.flow.router.ParentLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteParam;
 import com.vaadin.flow.router.RoutePrefix;
+import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.theme.lumo.LumoUtility.Display;
 import com.vaadin.flow.theme.lumo.LumoUtility.Flex;
 import com.vaadin.flow.theme.lumo.LumoUtility.FlexDirection;
@@ -31,15 +33,19 @@ public class UserList extends MasterDetailLayout implements BeforeEnterObserver 
 
     private final HorizontalLayout header = new HorizontalLayout();
 
+    private final RouterLink backButton = new RouterLink(IdentityManagementSection.class);
+
     private final Button addButton = new Button();
 
     private final Grid<User> grid = new Grid<>();
 
     UserList(UserProvider userProvider) {
+        backButton.add(LineAwesomeIcon.ANGLE_LEFT_SOLID.create());
         addButton.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_TERTIARY_INLINE);
         addButton.setIcon(LineAwesomeIcon.PLUS_SOLID.create());
         header.addClassNames(Padding.MEDIUM);
-        header.addToStart(new H3("Users"));
+        header.addToStart(backButton);
+        header.addToMiddle(new H4("Users"));
         header.addToEnd(addButton);
         master.addClassNames(Flex.AUTO, Display.FLEX, FlexDirection.COLUMN);
         master.add(header, grid);
@@ -50,8 +56,8 @@ public class UserList extends MasterDetailLayout implements BeforeEnterObserver 
                 event.getFirstSelectedItem().ifPresentOrElse(this::navigateToUserDetail, this::navigateToUserList));
         grid.getLazyDataView().setItemIndexProvider(userProvider);
         setMaster(master);
-        setDetailSize("400px");
-        setMasterMinSize("400px");
+        setDetailSize("375px");
+        setMasterMinSize("425px");
         setOverlayMode(OverlayMode.STACK);
     }
 

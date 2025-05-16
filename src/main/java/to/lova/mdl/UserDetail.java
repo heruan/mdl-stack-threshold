@@ -6,6 +6,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H3;
+import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.masterdetaillayout.MasterDetailLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -31,7 +32,7 @@ public class UserDetail extends MasterDetailLayout implements BeforeEnterObserve
 
     private final HorizontalLayout header = new HorizontalLayout();
 
-    private final H3 title = new H3();
+    private final H4 title = new H4();
 
     private final RouterLink backButton = new RouterLink(UserList.class);
 

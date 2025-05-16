@@ -6,6 +6,10 @@ vaadin-master-detail-layout[has-detail]::part(master) {
     border-right: 1px solid var(--lumo-contrast-10pct);
 }
 
+vaadin-master-detail-layout[has-detail].side-nav::part(master) {
+    max-width: 256px;
+}
+
 vaadin-vertical-layout {
     align-items: stretch;
 }
