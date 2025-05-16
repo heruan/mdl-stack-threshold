@@ -2,12 +2,17 @@ vaadin-master-detail-layout::part(master) {
     display: flex;
 }
 
-vaadin-master-detail-layout[has-detail]::part(master) {
+vaadin-master-detail-layout[has-detail]:not([orientation="vertical"])::part(master) {
     border-right: 1px solid var(--lumo-contrast-10pct);
 }
 
 vaadin-master-detail-layout[has-detail].side-nav::part(master) {
     max-width: 256px;
+}
+
+vaadin-master-detail-layout[orientation="vertical"]::part(master) {
+    flex-grow: 0;
+    flex-basis: auto;
 }
 
 vaadin-vertical-layout {

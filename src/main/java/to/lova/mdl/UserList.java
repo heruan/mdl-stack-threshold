@@ -8,7 +8,6 @@ import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
 import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.masterdetaillayout.MasterDetailLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -52,8 +51,11 @@ public class UserList extends MasterDetailLayout implements BeforeEnterObserver 
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER);
         grid.setDataProvider(userProvider);
         grid.addComponentColumn(UserCard::new);
-        grid.addSelectionListener(event ->
-                event.getFirstSelectedItem().ifPresentOrElse(this::navigateToUserDetail, this::navigateToUserList));
+        grid.addSelectionListener(event -> {
+            if (event.isFromClient()) {
+                event.getFirstSelectedItem().ifPresentOrElse(this::navigateToUserDetail, this::navigateToUserList);
+            }
+        });
         grid.getLazyDataView().setItemIndexProvider(userProvider);
         setMaster(master);
         setDetailSize("375px");
@@ -70,7 +72,7 @@ public class UserList extends MasterDetailLayout implements BeforeEnterObserver 
     }
 
     private void navigateToUserDetail(User user) {
-        UI.getCurrent().navigate(UserDetail.class, new RouteParam("userId", user.getId()));
+        UI.getCurrent().navigate(UserProfile.class, new RouteParam("userId", user.getId()));
     }
 
     private void navigateToUserList() {
