@@ -40,6 +40,7 @@ public class UserList extends MasterDetailLayout implements BeforeEnterObserver 
     private final Grid<User> grid = new Grid<>();
 
     UserList(UserProvider userProvider) {
+        addClassNames("list-layout");
         backButton.add(LineAwesomeIcon.ANGLE_LEFT_SOLID.create());
         addButton.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_TERTIARY_INLINE);
         addButton.setIcon(LineAwesomeIcon.PLUS_SOLID.create());
@@ -59,8 +60,6 @@ public class UserList extends MasterDetailLayout implements BeforeEnterObserver 
         });
         grid.getLazyDataView().setItemIndexProvider(userProvider);
         setMaster(master);
-        setDetailSize("375px");
-        setMasterMinSize("425px");
         setOverlayMode(OverlayMode.STACK);
     }
 

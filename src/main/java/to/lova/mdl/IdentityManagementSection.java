@@ -29,7 +29,7 @@ public class IdentityManagementSection extends MasterDetailLayout {
     private final SideNavItem usersNavItem = new SideNavItem("Users", UserList.class);
 
     IdentityManagementSection() {
-        addClassName("side-nav");
+        addClassNames("section-layout", "side-nav");
         master.addClassNames(AlignItems.STRETCH);
         header.addClassNames(AlignItems.CENTER);
         header.addToStart(new H4("Identity Management"));
@@ -41,8 +41,6 @@ public class IdentityManagementSection extends MasterDetailLayout {
         usersNavItem.setMatchNested(true);
         sideNav.addItem(usersNavItem);
         setMaster(master);
-        setMasterMinSize("256px");
-        setDetailMinSize("425px");
         setOverlayMode(OverlayMode.STACK);
     }
 }

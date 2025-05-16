@@ -6,13 +6,29 @@ vaadin-master-detail-layout[has-detail]:not([orientation="vertical"])::part(mast
     border-right: 1px solid var(--lumo-contrast-10pct);
 }
 
+vaadin-master-detail-layout[orientation="vertical"]::part(master) {
+    flex-grow: 0;
+    flex-basis: auto;
+}
+
 vaadin-master-detail-layout[has-detail].side-nav::part(master) {
     max-width: 256px;
 }
 
-vaadin-master-detail-layout[orientation="vertical"]::part(master) {
-    flex-grow: 0;
-    flex-basis: auto;
+vaadin-master-detail-layout.side-nav::part(master),
+vaadin-master-detail-layout.main-layout::part(detail),
+vaadin-master-detail-layout.main-layout::part(detail) {
+    min-width: 256px;
+}
+
+vaadin-master-detail-layout.main-layout::part(detail),
+vaadin-master-detail-layout.list-layout::part(master),
+vaadin-master-detail-layout.section-layout::part(detail) {
+    min-width: 425px;
+}
+
+vaadin-master-detail-layout.list-layout:not([stack])::part(detail) {
+    max-width: 375px;
 }
 
 vaadin-vertical-layout {
