@@ -1,6 +1,6 @@
 [versions]
 flow = "24.8.0.alpha12"
-components = "24.8.0.alpha6"
+components = "24.8.0.alpha7"
 line-awesome = "2.1.0"
 spring-boot = "3.4.4"
 datafaker = "2.4.2"

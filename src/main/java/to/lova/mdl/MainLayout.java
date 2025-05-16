@@ -15,12 +15,12 @@ public class MainLayout extends AppLayout {
 
     private final SideNavItem homeNavItem = new SideNavItem("Home", HomeView.class);
 
-    private final SideNavItem usersNavItem = new SideNavItem("Users", UserList.class);
+    private final SideNavItem idmNavItem = new SideNavItem("Identity Management", UserList.class);
 
     MainLayout() {
-        usersNavItem.setMatchNested(true);
+        idmNavItem.setMatchNested(true);
         sideNav.addItem(homeNavItem);
-        sideNav.addItem(usersNavItem);
+        sideNav.addItem(idmNavItem);
         drawer.addClassNames(AlignItems.STRETCH);
         drawer.add(new H3("MDL"), sideNav);
         addToDrawer(drawer);

@@ -1,12 +1,15 @@
 vaadin-master-detail-layout::part(master) {
     display: flex;
 }
+
 vaadin-master-detail-layout[has-detail]::part(master) {
     border-right: 1px solid var(--lumo-contrast-10pct);
 }
+
 vaadin-vertical-layout {
     align-items: stretch;
 }
+
 [has-label] {
     padding-top: 0;
 }

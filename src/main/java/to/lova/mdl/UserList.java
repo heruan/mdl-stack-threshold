@@ -17,16 +17,14 @@ import com.vaadin.flow.router.ParentLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteParam;
 import com.vaadin.flow.router.RoutePrefix;
-import com.vaadin.flow.theme.lumo.LumoUtility;
-import com.vaadin.flow.theme.lumo.LumoUtility.Border;
 import com.vaadin.flow.theme.lumo.LumoUtility.Display;
 import com.vaadin.flow.theme.lumo.LumoUtility.Flex;
 import com.vaadin.flow.theme.lumo.LumoUtility.FlexDirection;
 import com.vaadin.flow.theme.lumo.LumoUtility.Padding;
 
-@Route(layout = MainLayout.class, value = "")
+@Route(layout = IdentityManagementSection.class, value = "")
 @RoutePrefix("users")
-@ParentLayout(MainLayout.class)
+@ParentLayout(IdentityManagementSection.class)
 public class UserList extends MasterDetailLayout implements BeforeEnterObserver {
 
     private final Div master = new Div();
@@ -54,7 +52,7 @@ public class UserList extends MasterDetailLayout implements BeforeEnterObserver 
         setMaster(master);
         setDetailSize("400px");
         setMasterMinSize("400px");
-        setStackThreshold("800px");
+        setOverlayMode(OverlayMode.STACK);
     }
 
     @Override
