@@ -1,0 +1,46 @@
+[versions]
+flow = "24.8.0.alpha12"
+components = "24.8.0.alpha6"
+line-awesome = "2.1.0"
+spring-boot = "3.4.4"
+datafaker = "2.4.2"
+
+[libraries]
+components-applayout = { module = "com.vaadin:vaadin-app-layout-flow", version.ref = "components" }
+components-avatar = { module = "com.vaadin:vaadin-avatar-flow", version.ref = "components" }
+components-button = { module = "com.vaadin:vaadin-button-flow", version.ref = "components" }
+components-card = { module = "com.vaadin:vaadin-card-flow", version.ref = "components" }
+components-charts = { module = "com.vaadin:vaadin-charts-flow", version.ref = "components" }
+components-checkbox = { module = "com.vaadin:vaadin-checkbox-flow", version.ref = "components" }
+components-dashboard = { module = "com.vaadin:vaadin-dashboard-flow", version.ref = "components" }
+components-grid = { module = "com.vaadin:vaadin-grid-flow", version.ref = "components" }
+components-icons = { module = "com.vaadin:vaadin-icons-flow", version.ref = "components" }
+components-notification = { module = "com.vaadin:vaadin-notification-flow", version.ref = "components" }
+components-orderedlayout = { module = "com.vaadin:vaadin-ordered-layout-flow", version.ref = "components" }
+components-masterdetaillayout = { module = "com.vaadin:vaadin-master-detail-layout-flow", version.ref = "components" }
+components-sidenav = { module = "com.vaadin:vaadin-side-nav-flow", version.ref = "components" }
+components-tabs = { module = "com.vaadin:vaadin-tabs-flow", version.ref = "components" }
+components-textfield = { module = "com.vaadin:vaadin-text-field-flow", version.ref = "components" }
+components-virtuallist = { module = "com.vaadin:vaadin-virtual-list-flow", version.ref = "components" }
+flow-bom = { module = "com.vaadin:flow-bom", version.ref = "flow" }
+flow-data = { module = "com.vaadin:flow-data" }
+flow-dev = { module = "com.vaadin:vaadin-dev-server" }
+flow-html = { module = "com.vaadin:flow-html-components" }
+flow-server = { module = "com.vaadin:flow-server" }
+flow-spring = { module = "com.vaadin:vaadin-spring" }
+icons-lineawesome = { module = "org.parttio:line-awesome", version.ref = "line-awesome" }
+themes-lumo = { module = "com.vaadin:vaadin-lumo-theme", version.ref = "components" }
+spring-boot-dependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+datafaker = { module = "net.datafaker:datafaker", version.ref = "datafaker"}
+
+[bundles]
+vaadin = ["components-applayout", "components-avatar", "components-button", "components-card", "components-charts",
+    "components-checkbox", "components-dashboard", "components-grid", "components-icons", "components-notification",
+    "components-orderedlayout", "components-masterdetaillayout", "components-sidenav", "components-tabs",
+    "components-textfield", "components-virtuallist", "flow-bom", "flow-data", "flow-dev", "flow-html", "flow-server",
+    "flow-spring", "icons-lineawesome", "themes-lumo"]
+
+[plugins]
+vaadin = { id = "com.vaadin.flow", version.ref = "flow" }
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
